@@ -4,6 +4,7 @@
 %----------------------------------------------------------
 \usepackage{cite}
 \usepackage[pdftex]{graphicx}
+\usepackage{siunitx}
 % declare the path(s) where your graphic files are
 \graphicspath{images/}
 \DeclareGraphicsExtensions{.pdf,.jpeg,.png,.jpg}
@@ -80,20 +81,23 @@
 \end{IEEEkeywords}
 
 \section{Introdução}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits.
+Introdução teórica(básica), Objetivos, Materiais/Métodos.
 
 \section{Resultados e Discurssões}
 
-\subsection{Maintaining the Integrity of the Specifications}
+\subsection{Montagem do circuito}
 
-A batata class file is used to format your paper and style the text. All margins,
-column widths, line spaces, and text fonts are prescribed; please do not
-alter them. You may note peculiarities. For example, the head margin
-measures proportionately more than is customary. This measurement
-and others are deliberate, using specifications that anticipate your paper
-as one part of the entire proceedings, and not as an independent document.
-Please do not revise any of the current designations.
+Mostrar a figura e falar sobre conexões, etc...
+
+\subsection{Código Arduino 1}
+
+Falar sobre o código do arduino 1,
+mostrando coisas aprendidas durante sua produção.
+
+\subsection{Código Arduino 2}
+
+Falar sobre o código do arduino 2,
+mostrando coisas aprendidas durante sua produção.
 
 \section{Conclusão}
 Before you begin to format your paper, first write and save the content as a
@@ -111,12 +115,19 @@ even after they have been defined in the abstract. Abbreviations such as
 IEEE, SI, MKS, CGS, ac, dc, and rms do not have to be defined. Do not use
 abbreviations in the title or heads unless they are unavoidable.
 
-\subsection{Units}
+\subsection{Materiais}
 \begin{itemize}
-    \item Use either SI (MKS) or CGS as primary units. (SI units are encouraged.) English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as ``3.5-inch disk drive''.
-    \item Avoid combining SI and CGS units, such as current in amperes and magnetic field in oersteds. This often leads to confusion because equations do not balance dimensionally. If you must use mixed units, clearly state the units for each quantity that you use in an equation.
-    \item Do not mix complete spellings and abbreviations of units: ``Wb/m\textsuperscript{2}'' or ``webers per square meter'', not ``webers/m\textsuperscript{2}''. Spell out units when they appear in text: ``. . . a few henries'', not ``. . . a few H''.
-    \item Use a zero before decimal points: ``0.25'', not ``.25''. Use ``cm\textsuperscript{3}'', not ``cc''.)
+    \item 2 arduinos UNO;
+    \item 2 protoboards;
+    \item 1 potênciometro;
+    \item 1 display de LCD;
+    \item 1 sensor ultrassônico HC-SR04;
+    \item 32 jumpers;
+    \item 1 LED azul;
+    \item 1 LED vermelho;
+    \item 1 LED amarelo;
+    \item 3 resistores de 220 \si{\ohm};
+    \item 1 resistor de 1 K \si{\ohm};
 \end{itemize}
 
 \subsection{Equations}
@@ -245,7 +256,7 @@ figures and tables after they are cited in the text. Use the abbreviation
     \centerline{
         \includegraphics[width=7cm]{images/esquema-arduino.png}
     }
-    \caption{Esquematico do arduino.}
+    \caption{Esquematico arduino.}
     \label{fig}
 \end{figure}
 
