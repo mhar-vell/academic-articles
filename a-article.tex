@@ -76,7 +76,7 @@
 \end{abstract}
 
 \begin{IEEEkeywords}
-    Arduino, Comunicação Serial, Sistema Embarcado, styling, insert
+    Arduino, Comunicação Serial, Sistema Embarcado, LCD, Sensor ultrassônico
 \end{IEEEkeywords}
 
 \section{Introdução}
@@ -95,6 +95,11 @@
 Nesta seção serão apresentados os dispositivos, e a forma de comunicação, utilizadas para o desenvolvimento do projeto.
 \subsection{Arduino}
 \subsection{Medição de distância através do Sensor ultrassônico}
+
+\begin{equation}
+    distancia = tempo / 27.6233 / 2.0 \label{eq}
+\end{equation}
+
 \subsection{Sinalização com LED(Light Emitting Diode)}
 \subsection{Display LCD(Liquid crystal display)}
 \subsection{Potenciômetro}
@@ -157,18 +162,18 @@ Na montagem do esquemático do circuito virtual no simulador Tinkercad não ocor
 Diferentemente da montagem do circuito físico, pois, devido ao mau contato entre as ligações os dados passados para o display estiveram corrompidos. Para solucionar este problema jumpers precisaram ser substituídos
 e o display precisou ser soldado a um suporte para conectá-lo à protoboard.
 
-\subsection{Código do Arduino Master}
+\subsection{Efeito do delay}
+Notou-se que o valor utilizado na função delay afetou drasticamente a comunicação serial entre os dois arduinos, a forma encontrada para contornar isso foi utilizar a função delayMicroseconds. Pois, esta afeta menos ao tempo de comunicação do sistema.
 
-Falar sobre o código do arduino 1,
-mostrando coisas aprendidas durante sua produção.
+\subsection{Leitura do sensor ultrassônico HC-SR04}
 
-\subsection{Código do Arduino Servo}
+O sistema físico do arduino master ao receber dados referente ao tempo para a captação da reflexão de uma onda de som ultrassônico realizou o cálculo da distância entre o objeto e o sensor.
+Foi perceptível a pequena oscilação entre os valores obtidos de distância, isso ocorreu pois o sensor não possuí filtros eletrônicos específicos e estava sujeito a interferência causada por outras ondas sonoras no ambiente.
 
-Falar sobre o código do arduino 2,
-mostrando coisas aprendidas durante sua produção.
+Devido a essa oscilação, a forma utilizada para diminuir a alteração no valor de distância mostrado no display LCD foi mostrar nele a média de 5 valores lidos.
 
 \section{Conclusão}
-Dar um fechamento ao trabalho.
+Conclui-se que os sensor ultrassônico HC-SR04... Além disso, o mal contato entre os componentes... Dessa forma, o projeto se apresentou como uma excelente forma de compreender o funcionamento de dispositivos eletrônicos e sua comunicação.
 
 \bibliographystyle{IEEEtran}
 \bibliography{Bibliography}
