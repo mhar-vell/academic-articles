@@ -1,0 +1,41 @@
+\section{Como incluir gráficos em R no artigo.}
+
+Inclua gráficos explicativos com R. Seguem alguns exemplos:
+
+\begin{figure}
+    \centering
+    \include{source/r_graphics/line_plot}
+    \caption{Gráfico de linha.}
+    \label{graph:linha}
+\end{figure}
+
+\FloatBarrier % Força a imagem a ser inserida entre o texto
+
+
+Posso fazer uma citação ao gráfico também (Fig.~\ref{graph:linha}).
+
+\begin{figure}
+    %TODO: Ajustar tamanho
+    \centering
+    \include{source/r_graphics/hist_plot}
+    \caption{Histograma.}
+    \label{graph:histograma}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \include{source/r_graphics/box_plot}
+    \caption{Diagrama de caixa.}
+    \label{graph:box-plot}
+\end{figure}
+
+\begin{figure}
+    %TODO: Ajustar tamanho
+    \centering
+    \include{source/r_graphics/pie_plot}
+    \caption{Diagrama de \textit{pizza}.}
+    \label{graph:pie-plot}
+\end{figure}
+
+
