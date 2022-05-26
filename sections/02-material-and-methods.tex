@@ -117,3 +117,40 @@ comandos de divisão do documento. Por exemplo:
 
 Outras informações sobre cabeçalhos e rodapés estão disponíveis na seção 7.3 do
 manual do \textsf{memoir} \cite{memoir}.
+
+\section{Imagens}
+%-----------------------------especificar o tamanho----------------------------------
+\begin{figure}[htbp]
+    \centerline{
+        \includegraphics*[scale=1.5]{imagens/fig1.png} 
+        }
+\caption{Example of a figure caption.}
+\label{fig}
+\end{figure}
+%-----------------------------especificar o altura e largura----------------------------------
+\begin{figure}[htbp]
+    \centerline{
+        \includegraphics*[width=2cm, height=3cm]{imagens/fig1.png} 
+        }
+\caption{Example of a figure caption.}
+\label{fig}
+\end{figure}
+%-----------------------------setar a mesma largura do texto----------------------------------
+\begin{figure}[htbp]
+    \centerline{
+        \includegraphics*[width=\textwidth]{imagens/fig1.png} 
+        }
+\caption{Example of a figure caption.}
+\label{fig}
+\end{figure}
+%-----------------------------imagem dentro de outra----------------------------------
+\begin{figure}[ht]
+    \includegraphics[scale=1]{example-image-1x1}
+    \centering
+    \llap{\shortstack{%
+            \includegraphics[scale=0.6]{imagens/fig1.png}\\
+            \rule{0ex}{2in}%
+          }
+      \rule{0.2in}{0ex}}
+    \caption{This is my embedded figure}
+    \end{figure}
