@@ -2,18 +2,16 @@
 # Config Commands #
 ###################
 
-require(tikzDevice)
+library(tikzDevice)
 
-beamer.parms = list(paperwidth = 364.19536 / 72,
-                    paperheight = 273.14662 / 72,
-                    textwidth = 307.28987 / 72,
-                    textheight = 269.14662 / 72)
+file <- paste(getwd(), "/r-graphics/line-plot.tex", sep = "")
 
-# path from home directory 
-tikzDevice::tikz(filename = 'Coding/academic-articles/source/r_graphics/line_plot.tex',
-                 width = beamer.parms$textwidth,
-                 height = beamer.parms$textheight)
+tamanho <- 3.5
 
+# path from project directory
+tikzDevice::tikz(filename = file,
+                 width = tamanho,
+                 height = tamanho)
 
 ##################
 # Make the graph #
