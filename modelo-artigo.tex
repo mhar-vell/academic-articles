@@ -67,12 +67,14 @@
 
 % ---
 % Configurações do pacote listings
+
+% criação de cores personalizadas
 \definecolor{gray}{RGB}{160, 161, 167}
 \definecolor{yellow}{RGB}{197, 163, 50}
 \definecolor{backcolour}{RGB}{249, 249, 249}
 \definecolor{blu}{RGB}{0, 152, 221}
-\definecolor{grayblack}{RGB}{0, 152, 221}
 
+% configurações de estilo personalizado para o pacote listing
 \lstdefinestyle{bluloco-light}{
     backgroundcolor=\color{backcolour},   
     commentstyle=\itshape\color{gray},
@@ -92,10 +94,15 @@
     tabsize=2
 }
 
+% definição do estilo do pacote listing
+\lstset{style=bluloco-light}
+
 %//todo o que quem dizer isso? porque? é necessário fazer comentários.
 %//valar erick suzart
+%//valar mhar-vell OK
 
-% mapeamento de caracteres especiais
+% mapeamento de caracteres especiais: necessário para adicionar caracteres
+% especiais em código utilizando o pacote listing
 \lstset{literate=
   {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
   {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
@@ -113,9 +120,6 @@
   {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
   {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
 }
-
-\lstset{style=bluloco-light}
-
 
 % ---
 % Configurações do pacote backref
