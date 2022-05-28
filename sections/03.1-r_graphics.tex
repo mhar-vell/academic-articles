@@ -1,0 +1,78 @@
+\section{Como incluir gráficos em R no artigo.}
+
+Inclua gráficos explicativos com R. Para isso precisamos da biblioteca \textit{\textbf{tikzDevice}}, você pode instalar ela usando o comando abaixo:
+
+\begin{lstlisting}[language=R]
+install.packages("tikzDevice")
+\end{lstlisting}
+
+Para conseguir exportar seu gráfico gerado com R e ser incorporado em \LaTeX\ é necessário alguns comandos de configuração no código-fonte. Basicamente a estrutura do código será:
+
+\begin{lstlisting}[language=R]
+# incluir a bliblioteca tikzDevice
+library(tikzDevice)
+
+# caminho completo para o arquivo de destino
+# pode ser que seja necessário substituir "\" por "/"
+file <- paste(getwd(), "\r-graphics\pie-plot.tex", sep = "")
+
+# dimensão do gráfico
+tamanho <- 3.5
+
+# inicialização da biblioteca 
+tikzDevice::tikz(filename = file,
+                 width = tamanho,
+                 height = tamanho)
+
+# comandos para criação do gráfico propriamente dito:
+# seu gráfico deve ser criado a partir daqui
+myGraph()
+
+# término da escrita no arquivo de destino
+dev.off()
+\end{lstlisting}
+
+Pode-se criar o gráfico utilizando \textit{RStudio} ou \textit{VSCode}.
+
+Seguem alguns exemplos com diferentes categorias de gráficos gerados:
+
+\begin{figure}[H]
+    \centering
+    \include{source/r-graphics/line-plot}
+    \caption{Gráfico de linha.}
+    \label{graph:linha}
+\end{figure}
+
+%//todo nunca faça uma abordagem pessoal (primeira pessoa) em documentos científicos
+%//valar mhar-vell - OK
+Pode-se fazer uma citação ao gráfico também, assim: Fig.~\ref{graph:linha}.
+
+\begin{figure}[H]
+    \centering
+    \include{source/r-graphics/hist-plot}
+    \caption{Histograma.}
+    \label{graph:histograma}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \include{source/r-graphics/box-plot}
+    \caption{Diagrama de caixa.}
+    \label{graph:box-plot}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \include{source/r-graphics/pie-plot}
+    \caption{Diagrama de \textit{pizza}.}
+    \label{graph:pie-plot}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \include{source/r-graphics/reg-plot}
+    \caption{Regressão linear com R.}
+    \label{graph:reg-plot}
+\end{figure}
+
