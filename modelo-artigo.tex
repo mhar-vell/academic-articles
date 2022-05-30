@@ -99,7 +99,7 @@
 
 %//todo o que quem dizer isso? porque? é necessário fazer comentários.
 %//valar erick suzart
-%//valar mhar-vell OK
+%//checked mhar-vell OK
 
 % mapeamento de caracteres especiais: necessário para adicionar caracteres
 % especiais em código utilizando o pacote listing
@@ -134,6 +134,11 @@
 	\else
 		Citado #1 vezes nas páginas #2.%
 	\fi}%
+
+% ........................................................................
+% CONFIGURAÇÃO DO ENDEREÇO DAS FIGURAS
+\graphicspath{{source/pictures/}}
+
 % --- Informações de dados para CAPA e FOLHA DE ROSTO ---
 \titulo{Modelo Canônico de Artigo científico com \abnTeX adaptado}
 \tituloestrangeiro{}
@@ -187,27 +192,27 @@
 
 % resumo em português
 \begin{resumoumacoluna}
-	Conforme a ABNT NBR 6022:2018, o resumo no idioma do documento é elemento obrigatório.
-	Constituído de uma sequência de frases concisas e objetivas e não de uma simples enumeração de tópicos, não ultrapassando 250 palavras, seguido, logo abaixo, das palavras representativas do conteúdo do trabalho, isto é palavras-chave e/ou descritores, conforme a NBR 6028. (\ldots)
-	As palavras-chave devem figurar logo abaixo do resumo, antecedidas da expressão Palavras-chave:, separadas entre si por ponto e finalizadas também por ponto.
+   Conforme a ABNT NBR 6022:2018, o resumo no idioma do documento é elemento obrigatório.
+   Constituído de uma sequência de frases concisas e objetivas e não de uma simples enumeração de tópicos, não ultrapassando 250 palavras, seguido, logo abaixo, das palavras representativas do conteúdo do trabalho, isto é palavras-chave e/ou descritores, conforme a NBR 6028. (\ldots)
+   As palavras-chave devem figurar logo abaixo do resumo, antecedidas da expressão Palavras-chave:, separadas entre si por ponto e finalizadas também por ponto.
 
-	\vspace{\onelineskip}
+   \vspace{\onelineskip}
 
-	\noindent
-	\textbf{Palavras-chave}: latex. abntex. editoração de texto.
+   \noindent
+   \textbf{Palavras-chave}: latex. abntex. editoração de texto.
 \end{resumoumacoluna}
 
 % resumo em inglês
 \renewcommand{\resumoname}{Abstract}
 \begin{resumoumacoluna}
-	\begin{otherlanguage*}{english}
-		According to ABNT NBR 6022:2018, an abstract in foreign language is optional.
+   \begin{otherlanguage*}{english}
+      According to ABNT NBR 6022:2018, an abstract in foreign language is optional.
 
-		\vspace{\onelineskip}
+      \vspace{\onelineskip}
 
-		\noindent
-		\textbf{Keywords}: latex. abntex.
-	\end{otherlanguage*}
+      \noindent
+      \textbf{Keywords}: latex. abntex.
+   \end{otherlanguage*}
 \end{resumoumacoluna}
 
 % ]  				% FIM DE ARTIGO EM DUAS COLUNAS
@@ -218,11 +223,11 @@
 %
 \input{sections/01-introduction}
 \input{sections/02-material-and-methods}
+\input{sections/02.1-r_graphics.tex}
 \input{sections/03-results}
-\input{sections/03.1-r_graphics.tex}
 %//todo este section acima deve ser numerada em sequência, use um número na frente, exemplo 03.1-r-graphics.tex
 %//valar erick-suzart
-%//valar mhar-vell - OK
+%//checked mhar-vell - OK
 \input{sections/04-conclusion}
 % ----------------------------------------------------------
 \bookmarksetup{startatroot}% Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz 
