@@ -119,11 +119,11 @@ Outras informações sobre cabeçalhos e rodapés estão disponíveis na seção
 manual do \textsf{memoir} \cite{memoir}.
 
 \section{Imagens}
-Para incluir imagens em \LaTeX primeiramente é necessário chamar o pacote:
+Para incluir imagens em \LaTeX, primeiramente é necessário chamar o pacote:
 \begin{lstlisting}[language=TeX]
    \usepackage{graphicx}
 \end{lstlisting}
-Há diversas formas para adicionar imagens em \LaTeX uma das mais utilizadas é a includegraphics:
+Há diversas formas para adicionar imagens em \LaTeX, uma das mais utilizadas é a includegraphics:
 \begin{lstlisting}
    \includegraphics{images/fig-senai.png}
 \end{lstlisting}
@@ -131,7 +131,7 @@ Há diversas formas para adicionar imagens em \LaTeX uma das mais utilizadas é 
 \begin{lstlisting}
    \begin{figure}[H]
       \centerline{
-         \includegraphics*[scale=1.5]{images/fig1.png}
+         \includegraphics*[scale=1.5]{images/fig-senai.png}
       }
       \caption{Example of a figure caption.}
       \label{fig}
@@ -140,7 +140,7 @@ Há diversas formas para adicionar imagens em \LaTeX uma das mais utilizadas é 
 %-----------------------------especificar o tamanho------------------------------------------------------------------------------------------
 \begin{figure}[H]
    \centerline{
-      \includegraphics*[scale=1.5]{images/fig1.png}
+      \includegraphics*[scale=0.5]{images/fig-senai.png}
    }
    \caption{Example of a figure caption.}
    \label{fig}
@@ -148,13 +148,19 @@ Há diversas formas para adicionar imagens em \LaTeX uma das mais utilizadas é 
 
 %//todo quando apresentar uma solução não coloque em commentários, você precisa mostrar o seu desenvolvimento
 %// todo favor explicar as figuras coloque pelo menos uma frase no texto
+%//checked figuras explicadas
 %//todo inserir um parágrafo introdutório na sua section IMAGENS
+%//checked parágrafos inseridos
 %//todo siga a linha q o repositório está fazendo, estamos usando o inglês nos folders, troque imagens por image e insira no source
+%//checked nome trocado
 %//todo as figuras estão voando no texto, favor ajustar
+%//checked figuras ajustadas
 %//todo sugiro fazer uso do TRIM
+%//checked trim utilizado
 %//todo incluir mais disposições de figura, conforme a figura 9 atual. Vc fez com duas, façam com 3 4 5 6
+%//checked disposições incluídas utilizando minipages
 
-Se for necessário por estética pode-se adicionar uma moldura na imagem como segue abaixo:
+Se for necessário, por estética, pode-se adicionar uma moldura na imagem como segue abaixo:
 \begin{lstlisting}
    \begin{figure}[H]
       \centerline{
@@ -168,7 +174,7 @@ Se for necessário por estética pode-se adicionar uma moldura na imagem como se
 % %-----------------------------imagem emoldurada--------------------------------------------------------------------------------------------
 \begin{figure}[H]
    \centerline{
-       \fbox{\includegraphics*[scale=1.5]{images/fig1.png}} 
+       \fbox{\includegraphics*[scale=0.5]{images/fig-senai.png}} 
        }
 \caption{Example of a figure caption.}
 \label{fig}
@@ -186,12 +192,12 @@ Pode-se também especificar a largura e altura da figura caso necessário:
 %-----------------------------especificar o altura e largura-------------------------------------------------------------------------------
 \begin{figure}[H]
     \centerline{
-        \includegraphics*[width=2cm, height=3cm]{images/fig1.png} 
+        \includegraphics*[width=5cm, height=3cm]{images/fig-senai.png} 
         }
 \caption{Example of a figure caption.}
 \label{fig}
 \end{figure}
-É possível, alternativamente setar a largura da figura de acordo com o parágrafo:
+É possível, alternativamente, setar a largura da figura de acordo com o parágrafo:
 \begin{lstlisting}
    \begin{figure}[H]
       \centerline{
@@ -204,13 +210,13 @@ Pode-se também especificar a largura e altura da figura caso necessário:
 %-----------------------------setar a mesma largura do texto-------------------------------------------------------------------------------
 \begin{figure}[H]
     \centerline{
-        \includegraphics*[width=\textwidth]{images/fig1.png} 
+        \includegraphics*[width=\textwidth]{images/senai_cimatec.jpg} 
         }
 \caption{Example of a figure caption.}
 \label{fig}
 \end{figure}
 
-Há ainda como inscrever finguras dentro de figuras:
+Há ainda, como inscrever finguras dentro de figuras:
 \begin{lstlisting}
    \begin{figure}[H]
       \includegraphics[scale=1]{example-image-1x1}
@@ -244,35 +250,35 @@ Há ainda como inscrever finguras dentro de figuras:
 \end{lstlisting}
 %-----------------------------4 imagens inscritas em outra---------------------------------------------------------------------------------
 \begin{figure}[H]
-   \includegraphics[scale=1]{example-image-1x1}
+   \includegraphics[scale=0.9]{images/fig2.png}
    \centering
    %superior esquerda
    \llap{\shortstack{
-           \includegraphics[scale=1.5]{images/fig1.png}\\
+           \includegraphics[scale=0.111]{images/wall-e.jpg}\\
            \rule{0ex}{1.35in}%polegadas eixo Y
          }
      \rule{1.4in}{0ex}}%polegadas eixo X
    %inferior esquerda
    \llap{\shortstack{
-           \includegraphics[scale=1.5]{images/fig1.png}\\
+           \includegraphics[scale=0.111]{images/wall-e.jpg}\\
            \rule{0ex}{0.15in}%polegadas eixo Y
         }
      \rule{1.4in}{0ex}}%polegadas eixo X
    %superior direita  
    \llap{\shortstack{
-            \includegraphics[scale=1.5]{images/fig1.png}\\
+            \includegraphics[scale=0.111]{images/wall-e.jpg}\\
             \rule{0ex}{1.35in}%polegadas eixo Y
          }
       \rule{0.2in}{0ex}}%polegadas eixo X
    %inferior direita
    \llap{\shortstack{
-            \includegraphics[scale=1.5]{images/fig1.png}\\
+            \includegraphics[scale=0.111]{images/wall-e.jpg}\\
             \rule{0ex}{0.15in}%polegadas eixo Y
          }
       \rule{0.2in}{0ex}}%polegadas eixo X
    \caption{This is my embedded figure}
    \end{figure}
-O \LaTeX permite ainda colocar sombras na imagem:
+O \LaTeX\space permite também colocar sombras na imagem:
 \begin{lstlisting}
    \begin{figure}[H]
       \centerline{
@@ -285,7 +291,7 @@ O \LaTeX permite ainda colocar sombras na imagem:
 %-----------------------------sombra na imagem---------------------------------------------------------------------------------------------
 \begin{figure}[H]
    \centerline{
-       \shadowbox{\includegraphics*[scale=1.5]{images/fig1.png}} 
+       \shadowbox{\includegraphics[scale=0.2]{images/wall-e.jpg}} 
        }
 \caption{Example of a figure caption.}
 \label{fig}
@@ -303,7 +309,7 @@ Além disso, há como fazer uma quebra de texto em torno da imagem:
 Praesent in sapien. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis fringilla tristique neque. Sed interdum libero ut metus. Pellentesque placerat.
 
 \begin{wrapfigure}{l}{0.25\textwidth}
-   \includegraphics[width=0.9\linewidth]{images/fig1.png} 
+   \includegraphics[width=1\linewidth]{images/wall-e.jpg} 
    \caption{Caption1}
    \label{fig:wrapfig}
 \end{wrapfigure}
@@ -311,7 +317,7 @@ Praesent in sapien. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Du
 Praesent in sapien. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis fringilla tristique neque. Sed interdum libero ut metus. Pellentesque placerat. Nam rutrum augue a leo. Morbi sed elit sit amet ante lobortis sollicitudin.
 Praesent in sapien. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis fringilla tristique neque. Sed interdum libero ut metus. Pellentesque placerat. Nam rutrum augue a leo. Morbi sed elit sit amet ante lobortis sollicitudin.Praesent in sapien. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis fringilla tristique neque. Sed interdum libero ut metus. Pellentesque placerat. Nam rutrum augue a leo. Morbi sed elit sit amet ante lobortis sollicitudin. Pellentesque placerat. Nam rutrum augue a leo. Morbi sed elit sit amet ante lobortis sollicitudin.mauri.Praesent in sapien. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis fringilla tristique neque. Maecenas dignissim aliquam pellentesque. 
 
-Pode-se também posicionar a figura sem quebra de texto:
+Pode-se, também, posicionar a figura sem quebra de texto:
 \begin{lstlisting}
    \begin{figure}[htbp]
       \includegraphics[width=0.3\textwidth, right]{images/fig1.png}
@@ -326,7 +332,7 @@ ou
 %-----------------------------posição a direita--------------------------------------------------------------------------------------------
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam lobortis facilisis sem. Nullam nec mi et neque pharetra sollicitudin.
 \begin{figure}[htbp]
-   \includegraphics[width=0.3\textwidth, right]{images/fig1.png}
+   \includegraphics[width=0.3\textwidth, right]{images/wall-e.jpg}
 \end{figure}
 Praesent imperdiet mi necante. Donec ullamcorper, felis non sodales commodo, lectus velit ultrices augue,
 a dignissim nibh lectus placerat pede. Vivamus nunc nunc, molestie ut, ultricies
@@ -335,7 +341,7 @@ vel, semper in, velit. Ut porttitor.
 %-----------------------------posição a esquerda--------------------------------------------------------------------------------------------
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam lobortis facilisis sem. Nullam nec mi et neque pharetra sollicitudin.
 \begin{figure}[htbp]
-   \includegraphics[width=0.3\textwidth]{images/fig1.png}
+   \includegraphics[width=0.3\textwidth]{images/wall-e.jpg}
 \end{figure}
 
 Praesent imperdiet mi necante. Donec ullamcorper, felis non sodales commodo, lectus velit ultrices augue,
@@ -343,31 +349,49 @@ a dignissim nibh lectus placerat pede. Vivamus nunc nunc, molestie ut, ultricies
 vel, semper in, velit. Ut porttitor.
 
 
-No \LaTeX, se houver necessidade, é possível adicionar imagens compostas:
+No \LaTeX, se houver necessidade, é possível adicionar disposições de imagens:
 \begin{lstlisting}
    \begin{figure}[H]
       \centering
       \begin{minipage}{.5\textwidth}
           \centering
-          \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig2.png}
-          \caption{$dt=0.1$}
+          \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
+          \caption{Example of a figure caption.}
           \label{fig:prob1_6_2}
       \end{minipage}%
       \begin{minipage}{0.5\textwidth}
           \centering
           \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-          \caption{$dt =$}
+          \caption{Example of a figure caption.}
           \label{fig:prob1_6_1}
       \end{minipage}
+      \begin{minipage}{.5\textwidth}
+         \centering
+         \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
+         \caption{Example of a figure caption.}
+         \label{fig:prob1_6_2}
+     \end{minipage}%
+     \begin{minipage}{0.5\textwidth}
+         \centering
+         \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
+         \caption{Example of a figure caption.}
+         \label{fig:prob1_6_1}
+      \end{minipage}
+      \begin{minipage}{.5\textwidth}
+         \centering
+         \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
+         \caption{Example of a figure caption.}
+         \label{fig:prob1_6_2}
+      \end{minipage}%
       \begin{minipage}{0.5\textwidth}
          \centering
          \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-         \caption{$dt =$}
+         \caption{Example of a figure caption.}
          \label{fig:prob1_6_1}
-      \end{minipage}      
+      \end{minipage} 
    \end{figure}
 \end{lstlisting}
-Há mais opções de imagens compostas comentadas no código.
+
 %------------------figuras compostas---------------------------------------------------------------------------------------------------------
 % %2
 % \begin{figure}[H]
@@ -375,40 +399,40 @@ Há mais opções de imagens compostas comentadas no código.
 %     \begin{minipage}{.5\textwidth}
 %         \centering
 %         \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%         \caption{$dt=0.1$}
+%         \caption{Example of a figure caption.}
 %         \label{fig:prob1_6_2}
 %     \end{minipage}%
 %     \begin{minipage}{0.5\textwidth}
 %         \centering
 %         \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%         \caption{$dt =$}
+%         \caption{Example of a figure caption.}
 %         \label{fig:prob1_6_1}
 %     \end{minipage}
 % \end{figure}
 
-%3
-\begin{figure}[H]
-   \centering
-   \begin{minipage}{.5\textwidth}
-       \centering
-       \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-       \caption{$dt=0.1$}
-       \label{fig:prob1_6_2}
-   \end{minipage}%
-   \begin{minipage}{0.5\textwidth}
-       \centering
-       \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-       \caption{$dt =$}
-       \label{fig:prob1_6_1}
-   \end{minipage}
-   \begin{minipage}{0.5\textwidth}
-      \centering
-      \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-      \caption{$dt =$}
-      \label{fig:prob1_6_1}
-   \end{minipage}
+% %3
+% \begin{figure}[H]
+%    \centering
+%    \begin{minipage}{.5\textwidth}
+%        \centering
+%        \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
+%        \caption{Example of a figure caption.}
+%        \label{fig:prob1_6_2}
+%    \end{minipage}%
+%    \begin{minipage}{0.5\textwidth}
+%        \centering
+%        \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
+%        \caption{Example of a figure caption.}
+%        \label{fig:prob1_6_1}
+%    \end{minipage}
+%    \begin{minipage}{0.5\textwidth}
+%       \centering
+%       \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
+%       \caption{Example of a figure caption.}
+%       \label{fig:prob1_6_1}
+%    \end{minipage}
    
-\end{figure}
+% \end{figure}
 
 % %4
 % \begin{figure}[H]
@@ -416,25 +440,25 @@ Há mais opções de imagens compostas comentadas no código.
 %    \begin{minipage}{.5\textwidth}
 %        \centering
 %        \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%        \caption{$dt=0.1$}
+%        \caption{Example of a figure caption.}
 %        \label{fig:prob1_6_2}
 %    \end{minipage}%
 %    \begin{minipage}{0.5\textwidth}
 %        \centering
 %        \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%        \caption{$dt =$}
+%        \caption{Example of a figure caption.}
 %        \label{fig:prob1_6_1}
 %    \end{minipage}
 %    \begin{minipage}{.5\textwidth}
 %       \centering
 %       \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%       \caption{$dt=0.1$}
+%       \caption{Example of a figure caption.}
 %       \label{fig:prob1_6_2}
 %   \end{minipage}%
 %   \begin{minipage}{0.5\textwidth}
 %       \centering
 %       \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%       \caption{$dt =$}
+%       \caption{Example of a figure caption.}
 %       \label{fig:prob1_6_1}
 %   \end{minipage}
 % \end{figure}
@@ -444,71 +468,85 @@ Há mais opções de imagens compostas comentadas no código.
 %    \begin{minipage}{.5\textwidth}
 %        \centering
 %        \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%        \caption{$dt=0.1$}
+%        \caption{Example of a figure caption.}
 %        \label{fig:prob1_6_2}
 %    \end{minipage}%
 %    \begin{minipage}{0.5\textwidth}
 %        \centering
 %        \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%        \caption{$dt =$}
+%        \caption{Example of a figure caption.}
 %        \label{fig:prob1_6_1}
 %    \end{minipage}
 %    \begin{minipage}{.5\textwidth}
 %       \centering
 %       \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%       \caption{$dt=0.1$}
+%       \caption{Example of a figure caption.}
 %       \label{fig:prob1_6_2}
 %   \end{minipage}%
 %   \begin{minipage}{0.5\textwidth}
 %       \centering
 %       \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%       \caption{$dt =$}
+%       \caption{Example of a figure caption.}
 %       \label{fig:prob1_6_1}
 %   \end{minipage}
 %   \begin{minipage}{0.5\textwidth}
 %       \centering
 %       \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%       \caption{$dt =$}
+%       \caption{Example of a figure caption.}
 %       \label{fig:prob1_6_1}
 %    \end{minipage}
 % \end{figure}
 % %6
-% \begin{figure}[H]
-%    \centering
-%    \begin{minipage}{.5\textwidth}
-%        \centering
-%        \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%        \caption{$dt=0.1$}
-%        \label{fig:prob1_6_2}
-%    \end{minipage}%
-%    \begin{minipage}{0.5\textwidth}
-%        \centering
-%        \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%        \caption{$dt =$}
-%        \label{fig:prob1_6_1}
-%    \end{minipage}
-%    \begin{minipage}{.5\textwidth}
-%       \centering
-%       \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%       \caption{$dt=0.1$}
-%       \label{fig:prob1_6_2}
-%   \end{minipage}%
-%   \begin{minipage}{0.5\textwidth}
-%       \centering
-%       \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%       \caption{$dt =$}
-%       \label{fig:prob1_6_1}
-%    \end{minipage}
-%    \begin{minipage}{.5\textwidth}
-%       \centering
-%       \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%       \caption{$dt=0.1$}
-%       \label{fig:prob1_6_2}
-%    \end{minipage}%
-%    \begin{minipage}{0.5\textwidth}
-%       \centering
-%       \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
-%       \caption{$dt =$}
-%       \label{fig:prob1_6_1}
-%    \end{minipage} 
-% \end{figure}
+\begin{figure}[H]
+   \centering
+   \begin{minipage}{.5\textwidth}
+       \centering
+       \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
+       \caption{Example of a figure caption.}
+       \label{fig:prob1_6_2}
+   \end{minipage}%
+   \begin{minipage}{0.5\textwidth}
+       \centering
+       \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
+       \caption{Example of a figure caption.}
+       \label{fig:prob1_6_1}
+   \end{minipage}
+   \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
+      \caption{Example of a figure caption.}
+      \label{fig:prob1_6_2}
+  \end{minipage}%
+  \begin{minipage}{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
+      \caption{Example of a figure caption.}
+      \label{fig:prob1_6_1}
+   \end{minipage}
+   \begin{minipage}{.5\textwidth}
+      \centering
+      \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
+      \caption{Example of a figure caption.}
+      \label{fig:prob1_6_2}
+   \end{minipage}%
+   \begin{minipage}{0.5\textwidth}
+      \centering
+      \includegraphics[width=0.5\linewidth, height=0.15\textheight]{images/fig-senai.png}
+      \caption{Example of a figure caption.}
+      \label{fig:prob1_6_1}
+   \end{minipage} 
+\end{figure}
+
+
+Há formas de cortar figuras no \LaTeX, uma delas é utilizando o trim:
+\begin{lstlisting}
+   \begin{figure}[H]
+      \centering
+      \includegraphics[trim={0 10cm 0 0},clip, scale=0.2]{images/wall-e.jpg}
+   \end{figure}   
+\end{lstlisting}
+\begin{figure}[H]
+   \centering
+   \includegraphics[trim={0 10cm 0 0},clip, scale=0.2]{images/wall-e.jpg}
+   \caption{Example of a figure caption.}
+\end{figure}  
